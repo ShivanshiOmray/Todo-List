@@ -9,6 +9,10 @@ const App = () => {
 
   const TaskSubmitHandler = (e) => {
     e.preventDefault();
+
+    // const copyTasks = [...tasks];
+    // copyTasks.push({ title, completed: false });
+    // settasks(copyTasks);
     settasks([...tasks, { title, completed: false }]);
     settitle("");
   };
@@ -38,6 +42,8 @@ const App = () => {
       copyTasks.splice(i, 1);
       settasks(copyTasks);
     }
+
+    //  settasks(tasks.filter((tasks,index)=>index !== i))
   };
 
   let tasksrender = (
@@ -73,6 +79,8 @@ const App = () => {
       );
     });
   }
+
+  console.log(tasks);
 
   return (
     <div className="overflow-x-hidden border-t-2 w-screen min-h-[100vh] bg-zinc-800 flex items-center flex-col">
